@@ -4,7 +4,7 @@ let websocket; // Variável global para armazenar a conexão WebSocket
 const userId = localStorage.getItem('idUsuario');
 
 // URL do servidor WebSocket, ajuste conforme necessário
-const websocketUrl = `ws://api-mini-rede-social.onrender.com:1000/${userId}`;
+const websocketUrl = `wss://api-mini-rede-social.onrender.com/${userId}`;
 
 
 
