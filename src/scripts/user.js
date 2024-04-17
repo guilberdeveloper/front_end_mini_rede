@@ -5,6 +5,7 @@ export default class User {
         this.email = email;
         this.senha = password;
         this.confirmPassword = confirmPassword;
+        this.rotaApi = "https://api-mini-rede-social.onrender.com/"
     }
 
     async criarConta(name, email, password, confirmPassword, foto) {
@@ -34,7 +35,7 @@ export default class User {
         formData.append('fotoUsuario', foto);
 
         try {
-            const response = await fetch('https://api-mini-rede-social.onrender.com/api/cadastro', {
+            const response = await fetch(`${this.rotaApi}api/cadastro`, {
                 method: 'POST',
                 body: formData
             });
