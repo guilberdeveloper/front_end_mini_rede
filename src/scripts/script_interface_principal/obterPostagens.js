@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 let postagensExibidas = [];
 
 function carregarPostagens() {
-    fetch('https://api-mini-rede-social.onrender.com/api/publicacoes')
+    fetch('https://api-mini.onrender.com/api/publicacoes')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao carregar postagens');
@@ -78,7 +78,7 @@ function exibirPostagens(postagens) {
 
         // Adicionando a foto do usuário
         const img = document.createElement('img');
-        img.src = `https://api-mini-rede-social.onrender.com/api/foto/${postagem.usuario_id._id}`;
+        img.src = `https://api-mini.onrender.com/api/foto/${postagem.usuario_id._id}`;
         img.alt = 'Imagem do usuário';
         postHeaderDiv.appendChild(img);
 
@@ -182,7 +182,7 @@ function comentar(postId, comentario) {
     const idUsuarioParaFoto = localStorage.getItem('idUsuario');
     const nomeUsuario = localStorage.getItem('nomeUsuario');
     // Enviar requisição para API para adicionar o comentário à postagem
-    fetch(`https://api-mini-rede-social.onrender.com/api/publicacoes/${postId}/comentar`, {
+    fetch(`https://api-mini.onrender.com/api/publicacoes/${postId}/comentar`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -209,7 +209,7 @@ function comentar(postId, comentario) {
 function darLike(postId) {
     // Enviar requisição para API para adicionar um like à postagem
     // Substitua 'http://localhost:3000/api/like' pela sua rota de adição de like
-    fetch(`https://api-mini-rede-social.onrender.com/api/publicacoes/${postId}/like`, {
+    fetch(`https://api-mini.onrender.com/api/publicacoes/${postId}/like`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -237,7 +237,7 @@ function darLike(postId) {
 function darDeslike(postId) {
     // Enviar requisição para API para remover um like da postagem
     // Substitua 'http://localhost:3000/api/dislike' pela sua rota de remoção de like
-    fetch(`https://api-mini-rede-social.onrender.com/api/publicacoes/${postId}/dislike`, {
+    fetch(`https://api-mini.onrender.com/api/publicacoes/${postId}/dislike`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

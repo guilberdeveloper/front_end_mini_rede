@@ -58,7 +58,7 @@ btn_Sair.addEventListener("click", (e) => {
 
 async function buscarAmigos() {
     try {
-        const response = await fetch(`https://api-mini-rede-social.onrender.com/api/amigos/${idUsuarioAtual}`, {
+        const response = await fetch(`https://api-mini.onrender.com/api/amigos/${idUsuarioAtual}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -91,7 +91,7 @@ async function buscarAmigos() {
 
             try {
                 // Fetch da foto do usuário correspondente
-                const fotoResponse = await fetch(`https://api-mini-rede-social.onrender.com/api/foto/${amigo.amigo_id._id}`);
+                const fotoResponse = await fetch(`https://api-mini.onrender.com/api/foto/${amigo.amigo_id._id}`);
                 if (fotoResponse.ok) {
                     const fotoBlob = await fotoResponse.blob();
                     const fotoURL = URL.createObjectURL(fotoBlob);
@@ -183,7 +183,7 @@ function pegarFotoUsuario() {
     return new Promise((resolve, reject) => {
         const idUsuarioParaFoto = localStorage.getItem('idUsuario');
         // Faça a requisição HTTP GET para a rota no backend
-        fetch(`https://api-mini-rede-social.onrender.com/api/foto/${idUsuarioParaFoto}`)
+        fetch(`https://api-mini.onrender.com/api/foto/${idUsuarioParaFoto}`)
             .then(response => {
                 // Verifica se a resposta foi bem-sucedida (status 200)
                 if (response.ok) {

@@ -13,7 +13,7 @@ document.getElementById('btn_procurar_amigo').addEventListener('click', async ()
                 return;
             }
 
-            const response = await fetch(`https://api-mini-rede-social.onrender.com/api/pessoas?name=${searchTerm}`, {
+            const response = await fetch(`https://api-mini.onrender.com/api/pessoas?name=${searchTerm}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -81,7 +81,7 @@ async function renderUsers(users) {
             userDiv.classList.add('searchResultItem');
 
             const userFoto = document.createElement('img');
-            userFoto.src = `https://api-mini-rede-social.onrender.com/api/foto/${user._id}`
+            userFoto.src = `https://api-mini.onrender.com/api/foto/${user._id}`
             userDiv.appendChild(userFoto)
 
             // Adiciona o nome do usuário
@@ -102,7 +102,7 @@ async function renderUsers(users) {
                     try {
                         const idUsuarioAtual = localStorage.getItem('idUsuario');
                         const idUsuarioPesquisado = localStorage.getItem('usuarioPesquisado');
-                        const response = await fetch('https://api-mini-rede-social.onrender.com/api/addAmigo', {
+                        const response = await fetch('https://api-mini.onrender.com/api/addAmigo', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
@@ -165,7 +165,7 @@ async function renderUsers(users) {
 async function checkIfFriend(userId) {
     const idUsuarioPesquisado = localStorage.getItem('usuarioPesquisado');
     try {
-        const response = await fetch(`https://api-mini-rede-social.onrender.com/api/checkAmigo?userId=${idUsuarioPesquisado}&friendId=${userId}`);
+        const response = await fetch(`https://api-mini.onrender.com/api/checkAmigo?userId=${idUsuarioPesquisado}&friendId=${userId}`);
         if (!response.ok) {
             throw new Error('Erro ao verificar se é amigo');
         }

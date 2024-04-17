@@ -28,7 +28,7 @@ function enviarPostagem(postContent) {
         return;
     }
 
-    fetch('https://api-mini-rede-social.onrender.com/api/publicacoes', {
+    fetch('https://api-mini.onrender.com/api/publicacoes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
