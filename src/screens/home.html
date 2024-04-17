@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/styles_screen_home.css">
+    <link rel="stylesheet" href="../styles/pesquisa_amigos/styles_container_pesquisa_amigos.css">
+    <link rel="stylesheet" href="../styles/styles_chat/chat_style.css">
+
+    <title>HOME</title>
+    <style>
+        /* Ocultar o conteúdo da página e mostrar o carregamento */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Verificar se o usuário está logado ao carregar a página
+        window.onload = function () {
+            const token = sessionStorage.getItem('token');
+            if (!token) {
+                // Redirecionar para a página de login se o token não estiver presente
+                window.location.href = '../../index.html';
+            } else {
+                // Exibir o conteúdo da página se o usuário estiver logado
+                document.querySelector('.loading').style.display = 'none';
+                document.querySelector('.content').style.display = 'block';
+            }
+        };
+    </script>
+    
+    <div class="container_principal_usuario_screen">
+        <header class="menu_usuario">
+            <span class="logo_screen_principal">FRIEND ZONE</span>
+            <ul>
+                <input type="search" placeholder="Procure um amigo" name="input_pesquisar_amigo"
+                    id="input_pesquisar_amigo" class="input_pesquisar_amigo">
+                <button id="btn_procurar_amigo" class="btn_procurar_amigo" name="btn_procurar_amigo">Procurar</button>
+                <img id="imgPerfil" src="../../img/user.png" alt="">
+                <li id="userName">Nome</li>
+                <div id="menuModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="closeMenuBtn">&times;</span>
+                        <button id="btn_Sair">Sair</button>
+                    </div>
+                </div>
+            </ul>
+        </header>
+        <!-- Contêiner de resultados próximo ao campo de busca -->
+        <div id="searchResultsContainer" class="searchResultsContainer"></div>
+        <div class="container_secondary">
+            <div class="container_public">
+
+                <div class="postFeedContainer">
+                    <div class="post-form" id="post-form">
+                        <h2>Faça uma nova postagem</h2>
+                        <form>
+                            <textarea name="post-content" id="post-content" rows="4"
+                                placeholder="Digite sua postagem aqui..."></textarea>
+                            <button type="submit" class="btnPostarPubli">Postar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="feed" id="feed-container">
+                    <!--<div class="post">
+                        <div class="post-header">
+                            <img  src="../../img/user.jpg" alt="Profile Picture">
+                            <h2>Guilber Vieira</h2>
+                        </div>
+                        <div class="post-content">
+                            <p>Postando sobre minha vida.</p>
+                        </div>
+                        <div class="post-footer">
+                            <span>Like</span>
+                            <span>Comment</span>
+                            <span>Share</span>
+                        </div>
+                    </div>-->
+                </div>
+
+            </div>
+
+            <div id="container_friend" class="container_friend">
+                <!--
+                <div class="friends">
+                    <div class="frind_container">
+                        <img src="../../img/user.jpg" alt="" set="">
+                        <span class="name_friend">Guilber Vieira</span>
+                        <div class="status_ativo"></div>
+                    </div>
+                </div>
+                -->
+            </div>
+            <!-- Estrutura básica do chat -->
+            <div id="chatContainer" class="chat">
+                <div class="chat-header" id="chat_header">
+                    <button class="close-chat-btn" id=".close-chat-btn">X</button>
+                    <!--<button class="minimize-chat-btn">Minimizar</button>-->
+                </div>
+                <div id="chatMessages" class="chat-messages">
+                    <!-- Aqui serão exibidas as mensagens da conversa -->
+                </div>
+                <div class="chat-input">
+                    <input id="messageInput" type="text" class="message-input" placeholder="Digite sua mensagem...">
+                    <button id="sendMessageButton" class="send-message-btn">Enviar</button>
+                </div>
+            </div>
+
+
+        </div>
+        <script defer src="../scripts/script_interface_principal/script_gerenciador_interface.js"></script>
+        <script defer src="../scripts/script_interface_principal/script_adicionar_amigos.js"></script>
+        <script defer src="../scripts/script_interface_principal/scripts_chat/chat_script.js"></script>
+        <script defer src="../scripts/script_interface_principal/scripts_chat/chat.msg.js"></script>
+        <script defer src="../scripts/script_interface_principal/obterPostagens.js"></script>
+        <script defer src="../scripts//script_interface_principal/postagem.js"></script>
+        
+</body>
+
+</html>

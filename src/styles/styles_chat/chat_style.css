@@ -1,0 +1,125 @@
+/* Estilo para a janela de chat */
+.chat {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    width: 290px;
+    height: 500px;
+    max-height: 300px; /* Altura máxima do chat quando expandido */
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    display: none; /* Inicialmente oculto */
+    z-index: 1000;
+    overflow-y: auto; /* Permite rolagem vertical */
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+/* Estilo para a janela de chat quando minimizado */
+.chat-minimized {
+    height: 40px; /* Altura da janela minimizada */
+}
+
+/* Estilo para o cabeçalho do chat */
+.chat-header {
+    
+    background-color: #ee5d24;
+    font-family: sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 3px solid #4c4c52;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+/* Estilo para os botões de minimizar e fechar */
+.minimize-chat-btn,
+.close-chat-btn {
+    background-color: #ee5d24 !important;
+    color: #ccc !important;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para a lista de mensagens do chat */
+.chat-messages {
+    padding: 10px;
+    height: inherit;
+    max-height: 200px; /* Altura máxima das mensagens */
+    overflow-y: auto; /* Permite rolagem vertical */
+}
+
+/* Estilo para o campo de entrada de mensagem */
+.chat-input {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    bottom: 0px;
+}
+
+.message-input {
+    flex: 1;
+    padding: 5px;
+    width: 100%;
+}
+
+.send-message-btn {
+    padding: 5px 10px;
+    background-color: #ee5d24;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* CSS */
+.sent-message {
+    background-color: #ee5d24; /* Cor de fundo para mensagem enviada */
+    color: #fff; /* Cor do texto para mensagem enviada */
+    text-align: right; /* Alinhamento à direita */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    font-family: sans-serif;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.received-message {
+    background-color: #2D3035; /* Cor de fundo para mensagem recebida */
+    color: #fff; /* Cor do texto para mensagem recebida */
+    text-align: left; /* Alinhamento à esquerda */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    font-family: sans-serif;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .chat {
+        width: 100%;
+        right: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .chat-header {
+        width: 100%;
+    }
+
+    .chat-input {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        bottom: 0px;
+    }
+}

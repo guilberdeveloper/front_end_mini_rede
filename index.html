@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/styles/login_page.css">
+    <title>MINI REDE</title>
+    <style>
+        /* CSS para o indicador de carregamento */
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #333;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            display: none; /* Ocultar o indicador de carregamento por padrão */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+     <!-- Indicador de carregamento -->
+     <div class="loading-spinner"></div>
+    <div class="login_container">
+        <div class="header_painel">
+            <h2>MINI REDE</h2>
+        </div>
+        <div class="form_container" id="form_container">
+            <div class="form_login" id="form_login">
+                <form>
+                    <label for="email"> E-mail:</label><input type="email" name="email" id="email" class="email_input"
+                        required>
+                    <label for="password"> Senha:</label><input type="password" name="password" id="password_input"
+                        class="password_input" required>
+                    <input type="submit" value="Entrar" class="btn_entrar" id="btn_entrar">
+                    
+                </form>
+                <button class="btn_register"  id="btn_register_formulario_login">Criar uma conta</button>
+            </div>
+            <div class="form_register" id="form_register">
+                <form>
+                    <span id="cadastradoComSucesso" class="cadastradoComSucesso">Cadatrado</span>
+                    <label for="name">Nome:</label><input type="text" name="name" id="name_input" class="name_input"
+                        required>
+                    <label for="email">E-mail:</label><input type="email" name="email" id="email_input" class="email_input"
+                        required>
+                    <label for="password">Senha:</label><input type="password" name="password" id="password_input_cadastro"
+                        class="password_input" required>
+                        <label for="password">Confirmar senha:</label><input type="password" name="password" id="confirm_password_input"
+                        class="confirm_password_input" required>
+                        <label for="photo">Foto de Perfil:</label><input type="file" name="photo" id="photo_input" class="photo_input" required>
+                    <input type="submit" value="Cadastrar-me" class="btn_cadastar" id="btn_cadastrar_formulario_register">
+                    
+                </form>
+                <button class="btn_register_formulario_cadastro" id="btn_fazerLogin_form_cadastro">Já tenho uma conta. Fazer Login</button>
+            </div>
+        </div>
+    </div>
+    
+    <script defer type="module" src="src/scripts/user.js"></script>
+    <script defer type="module" src="src/scripts/utils.js"></script>
+    <script defer type="module"  src="src/scripts/interface_controler.js"></script>
+</body>
+
+</html>

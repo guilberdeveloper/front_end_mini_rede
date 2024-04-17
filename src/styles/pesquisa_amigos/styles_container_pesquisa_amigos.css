@@ -1,0 +1,74 @@
+#searchResultsContainer {
+    position: absolute;
+    border-radius: 10px;
+    top: 50px; /* Posicionamento abaixo do input de busca com um pequeno espaço */
+    left: 500px;
+    width: 300px; /* Largura máxima de 500px */
+    max-width: 100%; /* Garante que a largura não ultrapasse a largura da tela */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+    padding: 10px;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical caso o conteúdo seja maior do que a altura */
+}
+
+img{
+   width: 30%;
+   border-radius: 5%;
+}
+
+/* Estilo para cada item de resultado */
+.searchResultItem {
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+/* Estilo para o item de resultado quando hover */
+.searchResultItem:hover {
+    background-color: #f0f0f0;
+    
+}
+
+.searchResultItem{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 10px;
+    align-items: center;
+}
+
+.searchResultItem span{
+    font-family: sans-serif;
+    color: #ee5d24;
+    font-size: 25px;
+}
+
+.addFriendButton{
+    display: block;
+    background-color: #ee5d24;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: medium;
+}
+
+/* Estilos para telas entre 768px e 1023px (tablets em modo retrato) */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Adicione estilos específicos para tablets aqui */
+    /* Por exemplo: */
+    #searchResultsContainer {
+        left: 50%; /* Posicionamento ajustado */
+        width: 80%; /* Largura ajustada */
+    }
+}
+
+/* Estilos para telas maiores que 1024px (desktops e tablets em modo paisagem) */
+@media only screen and (min-width: 1024px) {
+    #searchResultsContainer {
+        left: 60%; /* Posicionamento ajustado */
+        width: 300px; /* Largura mantida */
+    }
+}
