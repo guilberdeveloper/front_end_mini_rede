@@ -34,7 +34,7 @@ export default class User {
         formData.append('fotoUsuario', foto);
 
         try {
-            const response = await fetch('http://localhost:3000/api/cadastro', {
+            const response = await fetch('https://api-mini-rede-social.onrender.com/api/cadastro', {
                 method: 'POST',
                 body: formData
             });
@@ -63,7 +63,7 @@ export default class User {
             return;
         }
 
-        const endpoint = "http://localhost:3000/api/login";
+        const endpoint = "https://api-mini-rede-social.onrender.com/api/login";
 
         let dados = {
             email: email,
