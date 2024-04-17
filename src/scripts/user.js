@@ -35,7 +35,7 @@ export default class User {
         formData.append('fotoUsuario', foto);
 
         try {
-            const response = await fetch(`${this.rotaApi}api/cadastro`, {
+            const response = await fetch('https://api-mini-rede-social.onrender.com/api/cadastro', {
                 method: 'POST',
                 body: formData
             });
