@@ -110,7 +110,7 @@ async function buscarAmigos() {
 
             const statusDiv = document.createElement('div');
             statusDiv.classList.add('status_ativo');
-            statusDiv.setAttribute("id","status_ativo");
+            statusDiv.setAttribute("id", "status_ativo");
 
             friendContainer.appendChild(img);
             friendContainer.appendChild(nameSpan);
@@ -122,62 +122,6 @@ async function buscarAmigos() {
         console.error('Erro ao buscar amigos:', error);
     }
 }
-
-
-/* funcao que funciona
-// Função para buscar os amigos e colocá-los no container de amigos
-async function buscarAmigos() {
-    try {
-        const response = await fetch(`http://localhost:3000/api/amigos/${idUsuarioAtual}`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Erro ao buscar amigos');
-        }
-
-        const amigos = await response.json();
-        amigosARRAY.push(JSON.stringify(amigos));
-        localStorage.setItem("amigosArray", amigosARRAY);
-        console.log(amigos)
-        // Coloque os amigos no container de amigos
-        const containerFriend = document.querySelector('.container_friend');
-        containerFriend.innerHTML = ''; // Limpa os amigos existentes
-
-        amigos.forEach(amigo => {
-            const friendDiv = document.createElement('div');
-            friendDiv.classList.add('friends');
-
-            const friendContainer = document.createElement('div');
-            friendContainer.classList.add('frind_container');
-            friendContainer.dataset.friendId = amigo.amigo_id; // Adiciona o ID do amigo como um atributo 'data-id'
-            friendContainer.dataset.nameAmigoId = amigo.name;
-
-            const img = document.createElement('img');
-            img.src = `${pegarFotoUsuario()}`; // Substitua pelo caminho real da imagem do amigo
-            img.alt = 'Foto do amigo';
-
-            const nameSpan = document.createElement('span');
-            nameSpan.classList.add('name_friend');
-            nameSpan.textContent = amigo.name; // Assume que 'name' é o nome do amigo
-
-            const statusDiv = document.createElement('div');
-            statusDiv.classList.add('status_ativo');
-
-            friendContainer.appendChild(img);
-            friendContainer.appendChild(nameSpan);
-            friendContainer.appendChild(statusDiv);
-            friendDiv.appendChild(friendContainer);
-            containerFriend.appendChild(friendDiv);
-        });
-    } catch (error) {
-        console.error('Erro ao buscar amigos:', error);
-    }
-}
-*/
 
 function pegarFotoUsuario() {
     return new Promise((resolve, reject) => {

@@ -5,7 +5,6 @@ export default class User {
         this.email = email;
         this.senha = password;
         this.confirmPassword = confirmPassword;
-        this.rotaApi = "https://api-mini.onrender.com/"
     }
 
     async criarConta(name, email, password, confirmPassword, foto) {
@@ -35,8 +34,8 @@ export default class User {
         formData.append('fotoUsuario', foto);
 
         try {
-            const response = await fetch('https://api-mini.onrender.com/api/cadastro', {
-                method: 'POST',
+            const response = await fetch('https://api-mini.onrender.com/api/auth/cadastro', {
+                method: 'post',
                 body: formData
             });
 
@@ -64,7 +63,7 @@ export default class User {
             return;
         }
 
-        const endpoint = "https://api-mini.onrender.com/api/login";
+        const endpoint = "https://api-mini.onrender.com/api/auth/login";
 
         let dados = {
             email: email,
