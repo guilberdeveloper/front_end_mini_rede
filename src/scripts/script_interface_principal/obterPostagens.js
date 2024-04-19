@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     carregarPostagens();
 
     // Define um intervalo para carregar as postagens a cada minuto (60000 milissegundos)
-    setInterval(carregarPostagens, 40000);
+    setInterval(carregarPostagens, 10000);
 
     // Event listener para os botões de like e dislike
     document.addEventListener('click', function (event) {
