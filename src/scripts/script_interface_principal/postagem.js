@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const postForm = document.getElementById('post-form');
 
     postForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Impede o envio do formulário padrão
         
         const postContent = document.getElementById('post-content').value;
 
@@ -14,8 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
         
         // Envia a postagem para o backend
         enviarPostagem(postContent);
-        window.location.reload(); // atualiza a pagina quando enviar uma postagem
-        // assim consigo já exibir ela na tela , caso algo falhe
     });
 });
 
@@ -29,7 +26,7 @@ function enviarPostagem(postContent) {
     }
 
     fetch('https://api-mini.onrender.com/api/publicacoes', {
-        method: 'POST',
+        method: 'post',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
