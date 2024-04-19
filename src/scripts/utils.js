@@ -6,7 +6,7 @@ const usuario = new User();
 async function fazerLogin(email, password){
     console.log(email, password)
     if(email != "" && password != ""){
-        await usuario.login(email, password);
+        usuario.login(email, password);
     }
 }
 
